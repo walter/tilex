@@ -13,7 +13,12 @@ defmodule Tilex.PostController do
     |> redirect(to: "/")
   end
 
-  alias Tilex.{Post, Channel, Posts}
+  alias Tilex.{
+    Til,
+    Post,
+    Channel,
+    Posts
+  }
 
   def index(conn, %{"q" => search_query} = params) do
     page = Map.get(params, "page", "1") |> String.to_integer
@@ -41,7 +46,7 @@ defmodule Tilex.PostController do
   end
 
   def new(conn, _params) do
-    changeset = Post.changeset(%Post{})
+    changeset = Til.prepare_post()
     render conn, "new.html", changeset: changeset
   end
 
@@ -65,9 +70,9 @@ defmodule Tilex.PostController do
     developer = Guardian.Plug.current_resource(conn)
 
     changeset =
-      %Post{}
-      |> Map.put(:developer_id, developer.id)
-      |> Post.changeset(post_params)
+      post_params
+      |> Map.put("developer_id", developer.id)
+      |> Til.prepare_post()
 
     case Repo.insert(changeset) do
       {:ok, post} ->

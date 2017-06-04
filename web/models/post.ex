@@ -62,6 +62,7 @@ defmodule Tilex.Post do
     |> String.downcase
   end
 
+  defp add_slug(%Ecto.Changeset{valid?: false} = changeset), do: changeset
   defp add_slug(changeset) do
     unless get_field(changeset, :slug) do
       generate_slug()
