@@ -16,13 +16,13 @@ config :tilex, Tilex.Repo,
   adapter: Ecto.Adapters.Postgres,
   database: "tilex_test",
   hostname: "localhost",
-  username: "postgres",
+  # username: "postgres",
   pool: Ecto.Adapters.SQL.Sandbox
 
 config :tilex, :page_size, 5
 config :tilex, :auth_controller, Test.AuthController
-config :tilex, :slack_notifier, Test.Notifications.Slack
-config :tilex, :twitter_notifier, Test.Notifications.Twitter
+config :tilex, :slack_notifier, Test.Notifications.Notifiers.Slack
+config :tilex, :twitter_notifier, Test.Notifications.Notifiers.Twitter
 config :tilex, :organization_name, "Hashrocket"
 config :tilex, :canonical_domain, "https://til.hashrocket.com"
 config :tilex, :default_twitter_handle, "hashrocket"
