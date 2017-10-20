@@ -33,5 +33,6 @@ jobs:
       - run: cd assets && brunch build --production
       - run: mix test
       - run: mix credo
+      - run: mix format --check-formatted --dry-run
       - store_artifacts:
           path: /home/circleci/tilex/screenshots
