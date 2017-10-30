@@ -15,7 +15,6 @@ config :tilex, TilexWeb.Endpoint,
   host: [host: {:system, "HOST"}],
   http: [port: {:system, "PORT"}],
   url: [host: {:system, "HOST"}, port: 80],
-  cache_static_manifest: "priv/static/manifest.json",
   secret_key_base: {:system, "SECRET_KEY_BASE"}
 
 # Do not print debug messages in production
