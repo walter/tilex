@@ -50,6 +50,7 @@ defmodule Tilex.Mixfile do
       {:phoenix_pubsub, "~> 1.0"},
       {:postgrex, ">= 0.0.0"},
       {:timex, "~> 3.1"},
+      {:ueberauth_github, "~> 0.4"},
       {:ueberauth_google, "~> 0.5"},
       {:wallaby, "~> 0.19.1", only: :test},
     ]
