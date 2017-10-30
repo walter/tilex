@@ -23,6 +23,7 @@ config :logger, level: :info
 
 config :tilex, Tilex.Repo,
   adapter: Ecto.Adapters.Postgres,
+  database: "",
   url: {:system, "DATABASE_URL"},
   pool_size: 10,
   ssl: true
