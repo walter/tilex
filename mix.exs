@@ -31,7 +31,7 @@ defmodule Tilex.Mixfile do
   defp deps do
     [
       {:appsignal, "~> 1.0"},
-      {:basic_auth, "~> 2.1"},
+      {:basic_auth, "~> 2.2"},
       {:cachex, "~> 2.1"},
       {:cors_plug, "~> 1.2"},
       {:cowboy, "~> 1.0"},
