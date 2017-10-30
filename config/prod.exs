@@ -59,7 +59,7 @@ config :tilex, TilexWeb.Endpoint,
 # Alternatively, you can configure exactly which server to
 # start per endpoint:
 #
-#     config :tilex, TilexWeb.Endpoint, server: true
+config :tilex, TilexWeb.Endpoint, server: true
 #
 
 # Finally import the config/prod.secret.exs
