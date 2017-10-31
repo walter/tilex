@@ -29,13 +29,13 @@ config :ueberauth, Ueberauth,
         approval_prompt: "force",
         access_type: "offline",
         default_scope: "email profile",
-        hd: System.get_env("HOSTED_DOMAIN"),
+        hd: "${HOSTED_DOMAIN}",
       ]}
   ]
 
 config :ueberauth, Ueberauth.Strategy.Google.OAuth,
-  client_id: System.get_env("GOOGLE_CLIENT_ID"),
-  client_secret: System.get_env("GOOGLE_CLIENT_SECRET")
+  client_id: "${GOOGLE_CLIENT_ID}",
+  client_secret: "${GOOGLE_CLIENT_SECRET}"
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
@@ -55,8 +55,8 @@ config :guardian, Guardian,
   serializer: Tilex.GuardianSerializer
 
 config :extwitter, :oauth, [
-   consumer_key: System.get_env("twitter_consumer_key"),
-   consumer_secret: System.get_env("twitter_consumer_secret"),
-   access_token: System.get_env("twitter_access_token"),
-   access_token_secret: System.get_env("twitter_access_token_secret")
+   consumer_key: "${twitter_consumer_key}",
+   consumer_secret: "${twitter_consumer_secret}",
+   access_token: "${twitter_access_token}",
+   access_token_secret: "${twitter_access_token_secret}"
 ]

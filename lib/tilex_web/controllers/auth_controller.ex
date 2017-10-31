@@ -22,7 +22,7 @@ defmodule TilexWeb.AuthController do
   end
 
   def index(conn, _params) do
-    redirect(conn, to: "/auth/google")
+    redirect(conn, to: "/auth/github")
   end
 
   def delete(conn, _params) do
@@ -36,12 +36,12 @@ defmodule TilexWeb.AuthController do
     email = Map.get(info, :email)
     name = Developer.format_username(Map.get(info, :name))
 
-    case String.match?(email, ~r/@hashrocket.com$/) do
+    case String.match?(email, ~r/wm@waltermcginnis.com$/) do
       true ->
         attrs = %{
           email: email,
           username: name,
-          google_id: uid
+          google_id: "garbage"
         }
 
         Developer.find_or_create(Repo, attrs)

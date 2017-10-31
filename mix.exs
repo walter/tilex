@@ -18,7 +18,7 @@ defmodule Tilex.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {Tilex, []},
-     extra_applications: [:logger, :appsignal]]
+     extra_applications: [:logger]]
   end
 
   # Specifies which paths to compile per environment.
@@ -30,12 +30,12 @@ defmodule Tilex.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:appsignal, "~> 1.0"},
-      {:basic_auth, "~> 2.1"},
+      {:basic_auth, "~> 2.2"},
       {:cachex, "~> 2.1"},
       {:cors_plug, "~> 1.2"},
       {:cowboy, "~> 1.0"},
       {:credo, "~> 0.8.7", only: [:dev, :test], runtime: false},
+      {:distillery, "~> 1.5", runtime: false},
       {:earmark, github: "pragdave/earmark", ref: "2bc9051"},
       {:extwitter, "~> 0.8"},
       {:floki, "~> 0.18.0"},
@@ -50,6 +50,7 @@ defmodule Tilex.Mixfile do
       {:phoenix_pubsub, "~> 1.0"},
       {:postgrex, ">= 0.0.0"},
       {:timex, "~> 3.1"},
+      {:ueberauth_github, "~> 0.4"},
       {:ueberauth_google, "~> 0.5"},
       {:wallaby, "~> 0.19.1", only: :test},
     ]
