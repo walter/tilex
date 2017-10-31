@@ -113,7 +113,7 @@
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
 
     <!-- syntax highlighting -->
-    <%= if Mix.env != :test do %>
+    <%= if Application.get_env(:tilex, :environment) != :test do %>
       <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/elixir.min.js"></script>

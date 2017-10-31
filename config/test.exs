@@ -39,3 +39,4 @@ config :wallaby,
   ],
   screenshot_on_failure: true
 
+config :tilex, :environment, :test
