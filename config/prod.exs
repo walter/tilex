@@ -17,6 +17,8 @@ config :tilex, TilexWeb.Endpoint,
   secret_key_base: {:system, "SECRET_KEY_BASE"},
   cache_static_manifest: "priv/static/cache_manifest.json"
 
+# comment
+
 # Do not print debug messages in production
 config :logger, level: :info
 
