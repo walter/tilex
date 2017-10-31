@@ -13,9 +13,12 @@ use Mix.Config
 # which you typically run after static files are built.
 config :tilex, TilexWeb.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [host: {:system, "HOST"}, port: 80],
+  url: [host: "localhost", port: 80],
   secret_key_base: {:system, "SECRET_KEY_BASE"},
-  cache_static_manifest: "priv/static/cache_manifest.json"
+  cache_static_manifest: "priv/static/cache_manifest.json",
+  server: true,
+  root: ".",
+  version: Application.spec(:myapp, :vsn)
 
 # comment
 
@@ -62,7 +65,7 @@ config :tilex, TilexWeb.Endpoint,
 # Alternatively, you can configure exactly which server to
 # start per endpoint:
 #
-config :tilex, TilexWeb.Endpoint, server: true
+# config :tilex, TilexWeb.Endpoint, server: true
 #
 
 # Finally import the config/prod.secret.exs
