@@ -13,7 +13,7 @@ use Mix.Config
 # which you typically run after static files are built.
 config :tilex, TilexWeb.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [host: "localhost", port: {:system, "PORT"}],
+  url: [host: {:system, "HOST"}, port: {:system, "PORT"}],
   secret_key_base: {:system, "SECRET_KEY_BASE"},
   cache_static_manifest: "priv/static/cache_manifest.json",
   server: true,
@@ -87,7 +87,7 @@ config :tilex, :page_size, 50
 config :tilex, :auth_controller, AuthController
 config :tilex, :slack_notifier, Tilex.Notifications.Notifiers.Slack
 config :tilex, :twitter_notifier, Tilex.Notifications.Notifiers.Twitter
-config :tilex, :organization_name, {:system, "ORGANIZATION_NAME"}
+config :tilex, :organization_name, "Walter McGinnis"
 config :tilex, :ga_identifier, {:system, "GA_IDENTIFIER"}
 config :tilex, :canonical_domain, {:system, "CANONICAL_DOMAIN"}
 config :tilex, :default_twitter_handle, {:system, "DEFAULT_TWITTER_HANDLE"}
