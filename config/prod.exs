@@ -13,7 +13,7 @@ use Mix.Config
 # which you typically run after static files are built.
 config :tilex, TilexWeb.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [host: "localhost", port: 80],
+  url: [host: "localhost", port: {:system, "PORT"}],
   secret_key_base: {:system, "SECRET_KEY_BASE"},
   cache_static_manifest: "priv/static/cache_manifest.json",
   server: true,
